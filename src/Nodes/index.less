@@ -1,0 +1,123 @@
+.flow-builder-node,
+.flow-builder-node__content,
+.flow-builder-branch-node__content {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.flow-builder-node__content {
+  cursor: pointer;
+}
+
+.flow-builder-branch-node {
+  &__add-button {
+    position: absolute;
+    cursor: pointer;
+    z-index: 1;
+    .flow-builder-drop-button {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  .branch-add-disabled {
+    position: absolute;
+  }
+  &__conditions {
+    display: flex;
+  }
+  &__dashed {
+    position: absolute;
+  }
+  &__sorting__dashed {
+    position: absolute;
+    display: none;
+  }
+}
+
+.flow-builder-vertical {
+  margin: 0 auto;
+  flex-direction: column;
+
+  .flow-builder-node,
+  .flow-builder-node__content,
+  .flow-builder-branch-node__content {
+    flex-direction: column;
+  }
+
+  .flow-builder-start-node {
+    padding-top: 16px;
+  }
+  .flow-builder-end-node {
+    padding-bottom: 16px;
+  }
+
+  .flow-builder-branch-node {
+    .flow-builder-branch-node__content {
+      margin: 12px 0 2px 0;
+    }
+    &__add-button,
+    .branch-add-disabled {
+      top: -12px;
+    }
+    &__conditions {
+      flex-direction: row;
+    }
+    &__dashed,
+    &__sorting__dashed {
+      top: -2px;
+      right: 0;
+      bottom: -2px;
+      left: 0;
+    }
+  }
+}
+
+.flow-builder-horizontal {
+  margin: auto 0;
+  flex-direction: row;
+
+  .flow-builder-node,
+  .flow-builder-node__content,
+  .flow-builder-branch-node__content {
+    flex-direction: row;
+  }
+
+  .flow-builder-start-node {
+    padding-left: 16px;
+  }
+  .flow-builder-end-node {
+    padding-right: 16px;
+  }
+
+  .flow-builder-branch-node {
+    .flow-builder-branch-node__content {
+      margin: 0 2px 0 12px;
+    }
+    &__add-button,
+    .branch-add-disabled {
+      left: -12px;
+    }
+    &__conditions {
+      flex-direction: column;
+    }
+    &__dashed,
+    &__sorting__dashed {
+      top: 0;
+      right: -2px;
+      bottom: 0;
+      left: -2px;
+    }
+  }
+}
+
+.flow-builder-sortable-handle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  cursor: move;
+  opacity: 0;
+  position: absolute;
+}
